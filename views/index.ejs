@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Smart Task Manager</title>
+</head>
+<body>
+
+    <h1>TaskFlow</h1>
+    <h2>Smart Task Manager</h2>
+
+    <p>Welcome to your personal task management dashboard!</p>
+
+    <h3>Add a New Task</h3>
+
+    <form action="/add-task" method="POST">
+        <label for="task">Task Name:</label>
+
+        <input
+            type="text"
+            id="task"
+            name="task"
+            placeholder="Enter your task"
+            required
+        >
+
+        <button type="submit">Add Task</button>
+    </form>
+
+    
+<h3>My Tasks</h3>
+
+<% if (tasks.length === 0) { %>
+    <p>No tasks added yet.</p>
+<% } else { %>
+    <ul>
+        <% tasks.forEach((task) => { %>
+            <li><%= task %></li>
+        <% }); %>
+    </ul>
+<% } %>
+
+
+</body>
+</html>
